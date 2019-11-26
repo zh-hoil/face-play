@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import "./index.less";
+import { getVideoStream } from "./utils.js";
+import "./index.css";
 
 class Home extends Component {
+  componentDidMount() {
+    getVideoStream();
+  }
   render() {
     return (
       <div className="home">
-        <video id="video" autoplay></video>
-        <canvas id="canvas_vedio"></canvas>
+        <select id="video-select"></select>
+        <video id="video" autoPlay></video>
+        <canvas id="canvas-video"></canvas>
       </div>
     );
   }
